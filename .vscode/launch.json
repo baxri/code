@@ -7,6 +7,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "typescript",
+      "program": "${workspaceFolder}/typescript.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "console",
       "program": "${workspaceFolder}/console.js"
     },

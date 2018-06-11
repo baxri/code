@@ -1,4 +1,5 @@
-
+// Solution Address
+// https://app.codility.com/demo/results/trainingR672FS-GG9/
 
 let N = 1041;
 

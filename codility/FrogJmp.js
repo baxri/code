@@ -1,14 +1,12 @@
 // Solution Address
-// https://app.codility.com/demo/results/trainingHVYD2N-P9V/
+// https://app.codility.com/demo/results/trainingYNP495-ZYY/
 
 let X = 80
 let Y = 1000
 let D = 2
 
 function solution(X, Y, D) {
-    let distance = Y - X;
-    let jumps = distance / D;
-    return Math.ceil(jumps);
+    return Math.ceil((Y - X) / D);
 }
 
 let result = solution(X, Y, D);

@@ -1,7 +1,7 @@
 // Solution Address
 // 
 
-let A = 4
+let A = 3
 let B = 11
 // let B = 11
 let K = 3

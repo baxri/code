@@ -2,10 +2,12 @@
 // https://app.codility.com/demo/results/trainingPUV8RP-N25/
 
 let A = [];
-A[0] = 10
-A[1] = 50
-A[2] = 5
+A[0] = 1
+A[1] = 5
+A[2] = 2
 A[3] = 1
+A[4] = 4
+A[5] = 0
 
 function solution(A) {
 

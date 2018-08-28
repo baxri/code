@@ -1,6 +1,6 @@
 
 
-let str = 'Mr John Smith ';
+let str = 'Mr John Smith  ';
 
 
 function urlFy(str) {

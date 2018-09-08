@@ -21,19 +21,17 @@ function zeroMatrix(matrix) {
         }
     }
 
-
+    console.log(columnsZero);
 
     for (let row = 0; row < matrix.length; row++) {
         for (let column = 0; column < matrix[row].length; column++) {
-
-            console.log(rowsZero);
-
-            if (rowsZero.contains(row)) {
-
+            if (rowsZero.includes(row) || columnsZero.includes[column]) {
+                matrix[row][column] = 0;
             }
         }
     }
 
+    console.log(matrix);
 
 }
 

@@ -21,18 +21,15 @@ function zeroMatrix(matrix) {
         }
     }
 
-    console.log(columnsZero);
-
     for (let row = 0; row < matrix.length; row++) {
         for (let column = 0; column < matrix[row].length; column++) {
-            if (rowsZero.includes(row) || columnsZero.includes[column]) {
+            if (rowsZero.includes(row) || columnsZero.includes(column)) {
                 matrix[row][column] = 0;
             }
         }
     }
 
-    console.log(matrix);
-
+    return matrix;
 }
 
 console.log(zeroMatrix(matrix));

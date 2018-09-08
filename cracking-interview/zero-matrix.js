@@ -1,11 +1,14 @@
 
 
 let matrix = [
-    [1, 2, 3, 4, 5],
+    [0, 2, 3, 4, 5],
     [1, 2, 3, 4, 5],
     [1, 2, 3, 0, 5],
     [1, 2, 3, 4, 5],
 ];
+
+console.log(zeroMatrix(matrix));
+
 
 function zeroMatrix(matrix) {
 
@@ -31,5 +34,3 @@ function zeroMatrix(matrix) {
 
     return matrix;
 }
-
-console.log(zeroMatrix(matrix));

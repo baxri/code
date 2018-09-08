@@ -7,20 +7,13 @@ let matrix = [
 
 function rotateMatrinx(matrix) {
 
-    let rotate = []
-
-    console.log(matrix);
-    console.log(rotate);
-
-   
-
-    console.log(matrix);
-
+    let rotate = [];
 
     for (let i = 0; i < matrix.length; i++) {
+        rotate[i] = new Array(matrix.length);
+    }
 
-        console.log(matrix[i]);
-
+    for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix.length; j++) {
             let position = newPosition(matrix.length, i, j);
             rotate[position.row][position.index] = matrix[i][j];
@@ -28,7 +21,6 @@ function rotateMatrinx(matrix) {
     }
 
     console.log(rotate);
-
 }
 
 function newPosition(length, row, index) {

@@ -19,9 +19,7 @@ function isSubstring(s1, s2) {
         if (s2 == word) {
             return true;
         }
-
     }
-
 
     return false;
 }

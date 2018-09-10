@@ -9,7 +9,7 @@ let matrix = [
 
 function rotateMatrinx(matrix) {
 
-    for (let level = 0; level < 2; level++) {
+    for (let level = 0; level < matrix.length/2; level++) {
 
         let last = matrix.length - 1 - level;
 

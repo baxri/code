@@ -52,6 +52,7 @@ class LinkedList {
         }
 
         this.list = list;
+        this.length--;
     }
 
     get() {

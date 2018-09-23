@@ -28,31 +28,68 @@ class LinkedList {
         this.length++;
     }
 
+    removeFromHead() {
+        if (this.length === 0) {
+            return undefined;
+        }
+
+        let value = this.list.head.value;
+        this.list.head = this.list.head.next;
+        this.length--;
+
+        return value;
+    }
+
     remove(value) {
 
-        let list = {
-            head: {
+        if (this.list.head.value == value) {
+            return this.removeFromHead();
+        }
 
-            },
-        };
-        let prevNode = null;
-        let currentNode = this.list.head;
+        let prevNode = this.list.head;
+        let currentNode = prevNode.next;
 
         while (currentNode.next) {
             if (currentNode.value == value) {
-                if (prevNode) {
-                    prevNode.next = currentNode.next;
-                    list.head = prevNode;
-                } else {
-                    list.head = currentNode.next;
-                }
+                break;
             }
             prevNode = currentNode;
             currentNode = currentNode.next;
         }
 
-        this.list = list;
+        prevNode.next = currentNode.next;
         this.length--;
+    }
+
+    unique() {
+
+        let currentNode = this.list.head;
+
+        while (currentNode.next) {
+
+            let value = currentNode.value;
+
+            let currentNodeSub = this.list.head;
+            let mutches = 0;
+
+            while (currentNodeSub.next) {
+                let valueSub = currentNodeSub.value;
+
+                if (value == valueSub) {
+                    mutches++;
+                }
+
+                if (mutches > 1) {
+                    this.remove(valueSub);
+                    mutches = 0;
+                }
+
+                currentNodeSub = currentNodeSub.next;
+            }
+
+            currentNode = currentNode.next;
+        }
+
     }
 
     get() {
@@ -65,16 +102,22 @@ let listObj = new LinkedList(list);
 
 listObj.addTohead(1);
 listObj.addTohead(2);
-listObj.addTohead(3);
-listObj.addTohead(4);
+listObj.addTohead(5);
+listObj.addTohead(5);
+listObj.addTohead(5);
 listObj.addTohead(5);
 
-console.log(listObj.get());
+
+listObj.addTohead(7);
+listObj.addTohead(6);
+listObj.addTohead(9);
 
 
-listObj.remove(4);
-listObj.remove(5);
-listObj.remove(3);
+
+listObj.unique();
+console.log(listObj.length);
+
+
 
 console.log(listObj.get());
 

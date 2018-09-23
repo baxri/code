@@ -41,7 +41,6 @@ class LinkedList {
         let value = this.list.head.value;
         this.list.head = this.list.head.next;
         this.length--;
-
         return value;
     }
 
@@ -97,33 +96,74 @@ class LinkedList {
 
     }
 
+    toDigit(LinkedList) {
+
+        let currentNode = LinkedList.list.head;
+
+        let str = "";
+
+        while (currentNode.next) {
+            str += currentNode.value;
+            currentNode = currentNode.next;
+        }
+
+        return str * 1;
+    }
+
+    plus(list) {
+
+        let number1 = this.toDigit(this);
+        let number2 = this.toDigit(list);
+
+        let sum = ((number1 + number2) + "").split("").reverse();
+        let LinkedListSum = new LinkedList();
+
+        sum.map(val => {
+            LinkedListSum.addTohead(val);
+        });
+
+        return LinkedListSum;
+    }
+
+    checkPalindrome() {
+
+        for (let i = 0; i < this.length / 2; i++) {
+
+            let left = this.find(i).value;
+            let right = this.find((this.length - i - 1)).value;
+
+            if( left != right ){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     get() {
         return this.list;
     }
 }
 
 
-let listObj = new LinkedList(list);
+let list = new LinkedList();
 
-listObj.addTohead(1);
-listObj.addTohead(2);
-listObj.addTohead(5);
-listObj.addTohead(5);
-listObj.addTohead(5);
-listObj.addTohead(5);
+list.addTohead("A");
+list.addTohead("B");
+list.addTohead("D");
+list.addTohead("B");
+list.addTohead("A");
 
 
-listObj.addTohead(7);
-listObj.addTohead(6);
-listObj.addTohead(9);
+console.log(list.checkPalindrome());
 
 
 
-listObj.unique();
-console.log(listObj.length);
-
-console.log(listObj.find(4));
 
 
-console.log(listObj.get());
+
+
+
+
+
 

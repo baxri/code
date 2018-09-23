@@ -1,17 +1,4 @@
 
-const list = {
-    head: {
-        value: 12,
-        next: {
-            value: 99,
-            next: {
-                value: 37,
-                next: null
-            }
-        }
-    }
-};
-
 class LinkedList {
     constructor() {
         this.list = {
@@ -26,6 +13,24 @@ class LinkedList {
     addTohead(value) {
         this.list.head = { value: value, next: this.list.head };
         this.length++;
+    }
+
+    find(position) {
+
+        let currentNode = this.list.head;
+        let index = 0;
+
+        while (currentNode.next) {
+
+            if (index == position) {
+                break;
+            }
+
+            index++;
+            currentNode = currentNode.next;
+        }
+
+        return currentNode;
     }
 
     removeFromHead() {
@@ -117,6 +122,7 @@ listObj.addTohead(9);
 listObj.unique();
 console.log(listObj.length);
 
+console.log(listObj.find(4));
 
 
 console.log(listObj.get());

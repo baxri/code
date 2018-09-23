@@ -36,6 +36,22 @@ class Stack {
         return this.minStack[0];
     }
 
+    sort() {
+        for (let i = 0; i < this.stack.length; i++) {
+            for (let j = i + 1; j < this.stack.length; j++) {
+                if (this.stack[j] < this.stack[i]) {
+                    this.swap(i, j);
+                }
+            }
+        }
+    }
+
+    swap(i, j) {
+        let temp = this.stack[i];
+        this.stack[i] = this.stack[j];
+        this.stack[j] = temp;
+    }
+
     get() {
         return this.stack;
     }
@@ -46,21 +62,13 @@ let stack = new Stack();
 stack.push(4);
 stack.push(3);
 stack.push(5);
-stack.push(3);
-stack.push(3);
+stack.push(7);
+stack.push(9);
 
+stack.sort();
 
-stack.pop();
-
-
-console.log(stack.min());
-
-console.log(stack.isEmpty());
-
-console.log(stack.pick());
 
 console.log(stack.get());
-
 
 
 console.log(stack);

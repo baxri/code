@@ -2,6 +2,7 @@
 export class Node {
     constructor(vertex) {
         this.vertex = vertex;
+        this.visited = false;
     }
 
     connectTo(children) {
@@ -42,7 +43,55 @@ export class Graph {
     }
 }
 
+class Queue {
+
+    constructor() {
+        this.list = [];
+    }
+
+    add(node) {
+        this.list.push(node);
+    }
+
+    dequeue() {
+        let node = this.list[0];;
+        this.list = this.list.slice(1);
+        return node;
+    }
+
+    isEmpty() {
+        return this.list.length == 0
+    }
+
+}
 
 let graph = new Graph();
 graph.fillExample();
 graph.print();
+
+
+function search(graph, start, end) {
+
+    let queue = new Queue();
+
+    queue.add(start);
+
+    while (!queue.isEmpty()) {
+
+        let dequeued = queue.dequeue();
+
+        if (dequeued.vertex == end.vertex) {
+            return true;
+        }
+
+        dequeued.children.map(child => {
+            queue.add(child);
+        });
+
+    }
+
+    return false;
+}
+
+console.log(search(graph, graph.nodes[0], graph.nodes[1]));
+

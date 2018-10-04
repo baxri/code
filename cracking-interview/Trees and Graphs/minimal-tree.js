@@ -34,5 +34,4 @@ function minimalTree(array, tree) {
 
 console.log(minimalTree(array));
 
-console.log(tree);
 

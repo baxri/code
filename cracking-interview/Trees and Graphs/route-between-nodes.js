@@ -67,7 +67,6 @@ class Queue {
 
 let graph = new Graph();
 graph.fillExample();
-graph.print();
 
 
 function search(graph, start, end) {
@@ -80,17 +79,20 @@ function search(graph, start, end) {
 
         let dequeued = queue.dequeue();
 
+        dequeued.visited = true;
+
         if (dequeued.vertex == end.vertex) {
-            return true;
+            // return true;
         }
 
         dequeued.children.map(child => {
             queue.add(child);
         });
-
     }
 
-    return false;
+    console.log(graph);
+
+    // return false;
 }
 
 console.log(search(graph, graph.nodes[0], graph.nodes[1]));

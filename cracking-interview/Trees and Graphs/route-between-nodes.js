@@ -68,7 +68,6 @@ class Queue {
 let graph = new Graph();
 graph.fillExample();
 
-
 function search(graph, start, end) {
 
     let queue = new Queue();

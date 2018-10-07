@@ -2,7 +2,7 @@
 export class Node {
     constructor(vertex) {
         this.vertex = vertex;
-        this.visited = false;
+        this.state = 'unvisited';
     }
 
     connectTo(children) {
@@ -72,27 +72,32 @@ function search(graph, start, end) {
 
     let queue = new Queue();
 
+    start.state = 'visiting';
     queue.add(start);
 
     while (!queue.isEmpty()) {
 
         let dequeued = queue.dequeue();
 
-        dequeued.visited = true;
-
         if (dequeued.vertex == end.vertex) {
-            // return true;
+            return true;
         }
 
+        dequeued.state = 'visited';
+
         dequeued.children.map(child => {
-            queue.add(child);
+            if (child.state == 'unvisited') {
+                child.state = 'visiting';
+                queue.add(child);
+            }
+
         });
     }
 
     console.log(graph);
 
-    // return false;
+    return false;
 }
 
-console.log(search(graph, graph.nodes[0], graph.nodes[1]));
+console.log(search(graph, graph.nodes[3], graph.nodes[0]));
 

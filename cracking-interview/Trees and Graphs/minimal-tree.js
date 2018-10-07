@@ -1,8 +1,23 @@
 
 
-let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let array = [1, 2, 3, 4];
 
-let tree = [];
+class Tree {
+    constructor() {
+        this.root = null;
+    }
+}
+
+class Node {
+    constructor(name) {
+        this.name = name;
+        this.children = [];
+    }
+
+    addChild(node) {
+        this.children.push(node);
+    }
+}
 
 function minimalTree(array, tree) {
 
@@ -18,20 +33,33 @@ function minimalTree(array, tree) {
     let left = array.slice(0, middle);
     let right = array.slice(middle + 1);
 
-    console.log(middle);
-    console.log(left, );
-    console.log(right);
+    // console.log(middle);
+    // console.log(left, );
+    // console.log(right);
 
-    minimalTree(left, tree);
+    // if (array.length > 1) {
+    let leftLeaf = minimalTree(left, tree);
+    // }
+
+    let node = new Node(array[middle]);
+
+    if (leftLeaf) {
+        node.addChild(leftLeaf);
+    }
 
     console.log(array[middle]);
 
-    minimalTree(right, tree);
+    let rightLeaf = minimalTree(right, tree);
 
-    return tree;
+    if (rightLeaf) {
+        node.addChild(rightLeaf);
+    }
+
+    return node;
 }
 
+let tree = new Tree();
 
-console.log(minimalTree(array));
+console.log(minimalTree(array, tree));
 
 

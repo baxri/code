@@ -90,7 +90,6 @@ function search(graph, start, end) {
                 child.state = 'visiting';
                 queue.add(child);
             }
-
         });
     }
 

@@ -1,6 +1,6 @@
 
 
-let array = [1, 2, 3];
+let array = [4, 3, 2, 1, 5, 6, 7, 8];
 
 class Tree {
     constructor(array) {
@@ -40,11 +40,28 @@ class Tree {
         return node;
     }
 
+
     toArray() {
         return this.traverse(this.root, []);
     }
 
-    traverse(node, array) {
+
+    isBalanced(node = this.root, level = 1) {
+
+        let height = this._getHeight(this.root);
+
+        console.log(height);
+
+    }
+
+    _getHeight(node = null) {
+
+        if (!node) return 0;
+
+        return Math.max(this._getHeight(node.left()), this._getHeight(node.right())) + 1;
+    }
+
+    _traverse(node, array) {
 
         if (node.children[0]) {
             this.traverse(node.children[0], array);
@@ -57,7 +74,6 @@ class Tree {
         }
 
         return array;
-
     }
 }
 
@@ -70,6 +86,14 @@ class Node {
     addChild(node) {
         this.children.push(node);
     }
+
+    left() {
+        return this.children[0];
+    }
+
+    right() {
+        return this.children[1];
+    }
 }
 
 
@@ -77,6 +101,6 @@ class Node {
 let tree = new Tree(array);
 
 
-console.log(tree.toArray());
+console.log(tree.isBalanced());
 
 

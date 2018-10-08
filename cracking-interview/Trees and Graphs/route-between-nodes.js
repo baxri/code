@@ -81,7 +81,7 @@ function search(graph, start, end) {
         dequeued.visited = true;
 
         if (dequeued.vertex == end.vertex) {
-            // return true;
+            return true;
         }
 
         dequeued.children.map(child => {
@@ -91,7 +91,7 @@ function search(graph, start, end) {
 
     console.log(graph);
 
-    // return false;
+    return false;
 }
 
 console.log(search(graph, graph.nodes[0], graph.nodes[1]));

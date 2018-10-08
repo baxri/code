@@ -1,6 +1,6 @@
 
 
-let array = [1, 2, 3, 4, 5, 6, 7];
+let array = [1, 2, 3];
 
 class Tree {
     constructor(array) {
@@ -39,6 +39,26 @@ class Tree {
 
         return node;
     }
+
+    toArray() {
+        return this.traverse(this.root, []);
+    }
+
+    traverse(node, array) {
+
+        if (node.children[0]) {
+            this.traverse(node.children[0], array);
+        }
+
+        array.push(node.name);
+
+        if (node.children[1]) {
+            this.traverse(node.children[1], array);
+        }
+
+        return array;
+
+    }
 }
 
 class Node {
@@ -56,6 +76,7 @@ class Node {
 
 let tree = new Tree(array);
 
-console.log(tree);
+
+console.log(tree.toArray());
 
 

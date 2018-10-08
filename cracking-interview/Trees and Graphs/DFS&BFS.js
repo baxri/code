@@ -1,8 +1,14 @@
 
+let States = {
+    unvisited: 0,
+    visiting: 1,
+    visited: 2,
+}
+
 export class Node {
     constructor(vertex) {
         this.vertex = vertex;
-        this.state = 'unvisited';
+        this.state = States.unvisited;
     }
 
     connectTo(children) {
@@ -68,35 +74,55 @@ class Queue {
 let graph = new Graph();
 graph.fillExample();
 
-function search(graph, start, end) {
+function run(graph) {
+    BFS(graph.nodes[0]);
+
+    console.log(graph);
+}
+
+
+function BFS(node) {
 
     let queue = new Queue();
 
-    start.state = 'visiting';
-    queue.add(start);
+    node.state = States.visited;
+    queue.add(node);
 
     while (!queue.isEmpty()) {
 
-        let dequeued = queue.dequeue();
+        let dequeue = queue.dequeue();
 
-        if (dequeued.vertex == end.vertex) {
-            return true;
+        if (dequeue.children.length > 0) {
+
+            dequeue.children.map(child => {
+
+                if (child.state == States.unvisited) {
+                    child.state = States.visited;
+                    queue.add(child);
+                }
+
+            });
+
         }
 
-        dequeued.state = 'visited';
+    }
+}
 
-        dequeued.children.map(child => {
-            if (child.state == 'unvisited') {
-                child.state = 'visiting';
-                queue.add(child);
+function DFS(node) {
+
+    node.state = States.visited;
+
+    if (node.children.length > 0) {
+        node.children.map(child => {
+
+            if (child.state == States.unvisited) {
+                DFS(child);
             }
+
         });
     }
 
-    console.log(graph);
-
-    return false;
 }
 
-console.log(search(graph, graph.nodes[3], graph.nodes[0]));
+console.log(run(graph));
 

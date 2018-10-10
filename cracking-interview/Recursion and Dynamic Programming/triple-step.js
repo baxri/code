@@ -1,2 +1,2 @@
 
-console.log("OKOKOK");
+console.log("");

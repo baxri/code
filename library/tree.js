@@ -55,9 +55,7 @@ class Tree {
     }
 
     _getHeight(node = null) {
-
         if (!node) return 0;
-
         return Math.max(this._getHeight(node.left()), this._getHeight(node.right())) + 1;
     }
 

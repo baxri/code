@@ -1,8 +1,15 @@
+// Solution Address
+// https://app.codility.com/demo/results/trainingWNMCC4-AEQ/
+
 
 const A = [3, 8, 9, 7, 6];
-const K = 7;
+const K = 1;
 
 function solution(A, K) {
+
+    if (A.length < 2) {
+        return A;
+    }
 
     let newArray = new Array(...A);
 
@@ -12,8 +19,8 @@ function solution(A, K) {
         let newIndex = i + K;
 
         // If new index is unbound the array set it in the begining
-        if( typeof A[newIndex] == 'undefined' ){
-            newIndex = newIndex - A.length;
+        if (typeof A[newIndex] == 'undefined') {
+            newIndex = newIndex % A.length;
         }
 
         // Change value in new array with new index

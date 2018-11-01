@@ -7,11 +7,13 @@ const K = 1;
 
 function solution(A, K) {
 
+    // If array length less then 2 elements return same array
     if (A.length < 2) {
         return A;
     }
 
-    let newArray = new Array(...A);
+    // Allocate new array from old elements
+    let newArray = new Array(...A);``
 
     for (let i = 0; i < A.length; i++) {
 

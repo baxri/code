@@ -45,4 +45,5 @@ function solution(A) {
     return min;
 }
 
+
 console.log(solution(A));

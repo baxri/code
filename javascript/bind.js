@@ -3,7 +3,6 @@
 // https://www.youtube.com/watch?v=GhbhD1HR5vk
 // https://www.youtube.com/watch?v=PIkA60I0dKU
 
-
 let dog = {
     sound: "woof",
     talk: function () {
@@ -20,7 +19,6 @@ let boundFunction = talkFunction.bind(dog);
 
 talkFunction(); // undefined
 boundFunction(); // woof
-
 
 function talk() {
     console.log(this.sound);

@@ -5,7 +5,6 @@ let N = 1041;
 
 function solution(N) {
     let binary = N.toString(2);
-
     let ar = binary.split(1);
     if (ar.length < 3) {
         return 0;

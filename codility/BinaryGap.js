@@ -13,9 +13,7 @@ function solution(N) {
 
     ar.splice(0, 1);
     ar.splice(ar.length - 1, 1);
-
     let longestGap = 0;
-
     ar.map(gap => {
         longestGap = (longestGap < gap.length ? gap.length : longestGap);
     });

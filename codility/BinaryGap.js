@@ -21,7 +21,6 @@ function solution(N) {
     return longestGap;
 }
 
-
 let result = solution(N);
 console.log(result);
 

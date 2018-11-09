@@ -9,7 +9,6 @@ function solution(N) {
     if (ar.length < 3) {
         return 0;
     }
-
     ar.splice(0, 1);
     ar.splice(ar.length - 1, 1);
     let longestGap = 0;

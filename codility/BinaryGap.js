@@ -17,7 +17,6 @@ function solution(N) {
     ar.map(gap => {
         longestGap = (longestGap < gap.length ? gap.length : longestGap);
     });
-
     return longestGap;
 }
 

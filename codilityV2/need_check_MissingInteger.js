@@ -12,7 +12,6 @@ function solution(A) {
         if (current <= 0) {
             continue;
         }
-
         if (current > missing) {
             return missing;
         }

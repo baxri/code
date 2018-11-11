@@ -5,7 +5,6 @@ let A = [1];
 function solution(A) {
 
     A = A.sort();
-
     let missing = 1;
 
     for (let i = 0; i < A.length; i++) {

@@ -17,7 +17,6 @@ function solution(A) {
         }
 
         let next = A[i + 1];
-
         if (next != current) {
             missing++;
         }

@@ -20,7 +20,6 @@ function solution(A) {
         if (next != current) {
             missing++;
         }
-
     }
 
     return missing;

@@ -8,7 +8,6 @@ function solution(A) {
     let missing = 1;
 
     for (let i = 0; i < A.length; i++) {
-
         let current = A[i];
 
         if (current <= 0) {

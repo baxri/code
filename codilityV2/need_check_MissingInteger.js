@@ -21,7 +21,6 @@ function solution(A) {
             missing++;
         }
     }
-
     return missing;
 }
 

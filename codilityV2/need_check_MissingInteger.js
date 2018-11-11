@@ -13,12 +13,13 @@ function solution(A) {
         if (current <= 0) {
             continue;
         }
-        
+
         if (current > missing) {
             return missing;
         }
 
         let next = A[i + 1];
+        
         if (next != current) {
             missing++;
         }

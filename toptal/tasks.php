@@ -2,21 +2,19 @@
 
 $T = [];
 
-$T[] = "test1a";
-$T[] = "test2";
-$T[] = "test1b";
-$T[] = "test1c";
-$T[] = "test3";
-
+$T[] = 'test1a';
+$T[] = 'test2';
+$T[] = 'test1b';
+$T[] = 'test1c';
+$T[] = 'test3';
 
 $R = [];
 
-$R[] = "OK";
-$R[] = "OK";
-$R[] = "OK";
-$R[] = "Wrong Answer";
-$R[] = "Time limit exceeded";
-
+$R[] = 'OK';
+$R[] = 'OK';
+$R[] = 'OK';
+$R[] = 'Wrong Answer';
+$R[] = 'Time limit exceeded';
 
 function solution($T, $R)
 {
@@ -39,7 +37,9 @@ function solution($T, $R)
     $correct_answers = 0;
 
     foreach ($groups as $group) {
-        if ($group) $correct_answers++;
+        if ($group) {
+            $correct_answers++;
+        }
     }
 
     // get the last score
@@ -55,12 +55,12 @@ function testIsOk($result)
 
 d(solution($T, $R));
 
-
 function d($str, $die = true)
 {
     echo '<pre>';
     var_dump($str);
     echo '</pre>';
-    if ($die)
+    if ($die) {
         die;
+    }
 }

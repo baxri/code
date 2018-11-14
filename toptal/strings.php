@@ -7,13 +7,11 @@ function solution($S)
     $S = str_split($S);
     $new = [];
 
-    for ($i = 0; $i < count($S); $i++) {
-
+    for ($i = 0; $i < count($S); ++$i) {
         $current = $S[$i];
         $next = isset($S[$i + 1]) ? $S[$i + 1] : null;
 
         if ($current != $next) {
-
             $last = isset($new[count($new) - 1]) ? $new[count($new) - 1] : null;
 
             if ($last == $current) {
@@ -22,12 +20,11 @@ function solution($S)
                 $new[] = $current;
             }
         } else {
-            $i++;
+            ++$i;
         }
-
     }
 
-    return implode("", $new);
+    return implode('', $new);
 }
 
 function d($str, $die = true)
@@ -35,8 +32,9 @@ function d($str, $die = true)
     echo '<pre>';
     print_r($str);
     echo '</pre>';
-    if ($die)
+    if ($die) {
         die;
+    }
 }
 
 print_r(solution($S));

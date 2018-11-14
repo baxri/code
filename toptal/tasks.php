@@ -19,9 +19,10 @@ $R[] = 'Time limit exceeded';
 function solution($T, $R)
 {
     $groups = [];
-    $correct_answers = [];
+    $correct_answers = 0;
 
     foreach ($T as $key => $t) {
+        // Get test case
         $last_element = substr($t, -1);
 
         // Get real task name

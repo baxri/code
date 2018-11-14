@@ -19,6 +19,7 @@ $R[] = 'Time limit exceeded';
 function solution($T, $R)
 {
     $groups = [];
+    $correct_answers = [];
 
     foreach ($T as $key => $t) {
         $last_element = substr($t, -1);
@@ -34,11 +35,10 @@ function solution($T, $R)
     }
 
     // Calculate correct answers
-    $correct_answers = 0;
 
     foreach ($groups as $group) {
         if ($group) {
-            $correct_answers++;
+            ++$correct_answers;
         }
     }
 

@@ -1,9 +1,11 @@
 <?php
 
-$S = 'ACCAABBC';
+// $S = 'ACCAABBC';
+$S = 'ABBC';
 
 function solution($S)
 {
+    // Convert string to array
     $S = str_split($S);
     $new = [];
 
@@ -37,4 +39,4 @@ function d($str, $die = true)
     }
 }
 
-print_r(solution($S));
+d(solution($S));

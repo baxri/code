@@ -3,6 +3,8 @@
 
 let N = 1041;
 
+console.log();
+
 function solution(N) {
 
     let binary = N.toString(2);

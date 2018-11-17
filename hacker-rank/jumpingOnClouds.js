@@ -1,5 +1,4 @@
 
-let c = [0, 0, 0, 0, 1, 0];
 
 function jumpingOnClouds(c) {
 
@@ -21,4 +20,4 @@ function jumpingOnClouds(c) {
     return counts;
 }
 
-console.log(jumpingOnClouds(c));
+console.log(jumpingOnClouds([0, 0, 0, 0, 1, 0]));

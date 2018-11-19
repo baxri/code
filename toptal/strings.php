@@ -1,7 +1,7 @@
 <?php
 
-// $S = 'ACCAABBC';
-$S = 'ABBC';
+$S = 'ACCCAABBC';
+// $S = 'ABBC';
 
 function solution($S)
 {

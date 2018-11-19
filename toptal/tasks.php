@@ -36,7 +36,6 @@ function solution($T, $R)
     }
 
     // Calculate correct answers
-
     foreach ($groups as $group) {
         if ($group) {
             ++$correct_answers;

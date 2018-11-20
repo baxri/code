@@ -1,6 +1,5 @@
 
 
-
 function countSwaps(a) {
 
     let count = 0;

@@ -18,7 +18,7 @@ function circularArrayRotation(a, k, queries) {
     let r = [];
 
     queries.map((item, key) => {
-        r.push(rotated[key]);
+        r.push(rotated[item]);
     })
 
     return r;

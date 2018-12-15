@@ -20,8 +20,6 @@ function howManyGames(p, d, m, s) {
         }
     }
 
-    console.log(left_money);
-
     return games;
 }
 

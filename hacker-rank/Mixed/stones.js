@@ -20,7 +20,11 @@ function stones(n, a, b) {
             if (!next.includes(pos + b)) {
                 next.push(pos + b);
             }
+
+
         })
+
+        console.log(next);
 
         possible.push(next);
     }
@@ -31,4 +35,4 @@ function stones(n, a, b) {
 
     return last;
 }
-console.log(stones(2, 2, 3))
+console.log(stones(3, 1, 2))

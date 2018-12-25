@@ -30,28 +30,17 @@ function toptalAdd(a, b) {
         let y = parseInt(b[i]);
 
         let sum = [...(x + y + save).toString()];
-
-        console.log(x);
-        console.log(y);
-        console.log(sum);
-
-        res.unshift(sum[sum.length - 1]);
-
-        if (sum.length > 0) {
-            save = sum.slice(0, sum.length - 1);
-            console.log(save);
-        }
-
-
-        console.log(res);
+        save = 0;
 
         if (sum.length > 1) {
-            save = sum.slice(0, sum.length - 2);
+            save = 1;
         }
+
+        let val = sum[sum.length - 1];
+        res.unshift(val);
     }
 
-    console.log(b);
-
+    return parseInt(res.join(""));
 }
 
-console.log(toptalAdd(234, 8))
+console.log(toptalAdd(233, 3))

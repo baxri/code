@@ -103,11 +103,11 @@ class Bst {
         if (node === null) node = this.root;
 
         if (value > node.value) {
-            return this.delete(value, node.right, node, 'right');
+            this.delete(value, node.right, node, 'right');
         }
 
         if (value < node.value) {
-            return this.delete(value, node.left, node, 'left');
+            this.delete(value, node.left, node, 'left');
         }
 
         if (node.value == value) {

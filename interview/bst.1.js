@@ -98,45 +98,41 @@ class Bst {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
-    delete(value, node = null) {
+    delete(value, node = null, parent = null, side = null) {
 
         if (node === null) node = this.root;
 
         if (value > node.value) {
-            this.delete(value, node.right, node);
+            return this.delete(value, node.right, node, 'right');
         }
 
         if (value < node.value) {
-            this.delete(value, node.left, node);
+            return this.delete(value, node.left, node, 'left');
         }
 
         if (node.value == value) {
+            if (node.left === null && node.right === null) {
+                if (side == 'left') {
+                    parent.left = null;
+                } else {
+                    parent.right = null;
+                }
+            } else {
+                let temp = node.value;
+                let deepestRightNode = this.deepestRightNode(node);
+                node.value = deepestRightNode.value;
 
-            node.value = 90;
-
-            console.log(node);
-
-            // if (node.left === null && node.right === null) {
-
-
-
-            // } else {
-            //     let valueToDelete = node.value;
-            //     let deepestRightNode = this.deepestRightNode(node);
-            //     node.value = deepestRightNode.value;
-
-            //     if (deepestRightNode.value < valueToDelete) {
-            //         this.delete(deepestRightNode.value, node.left);
-            //     } else {
-            //         this.delete(deepestRightNode.value, node.right);
-            //     }
-            // }
+                if (deepestRightNode.value < temp) {
+                    this.delete(deepestRightNode.value, node.left, node, 'left');
+                } else {
+                    this.delete(deepestRightNode.value, node.right, node, 'right');
+                }
+            }
         }
-
     }
 
-    deepestRightNode(node = null) {
 
+    deepestRightNode(node = null) {
         if (node.left === null && node.right === null) {
             return node;
         }

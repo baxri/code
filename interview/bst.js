@@ -64,7 +64,6 @@ class Bst {
     }
 
     maxValue(node = null) {
-
         if (node == null) node = this.root;
 
         if (node.right) {

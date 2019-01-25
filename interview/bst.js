@@ -1,5 +1,6 @@
 
 
+
 class Node {
     constructor(value) {
         this.value = value;
@@ -9,101 +10,151 @@ class Node {
 }
 
 class Bst {
-    constructor(root) {
-        this.root = new Node(root);
+
+    constructor(value) {
+        const node = new Node(value);
+        this.root = node;
     }
 
     push(value) {
 
-        let currentNode = this.root;
         const node = new Node(value);
 
+        let currentNode = this.root;
+
         while (currentNode) {
-            if (value < currentNode.value) {
-                if (!currentNode.left) {
+            if (currentNode.value > node.value) {
+                if (currentNode.left == null) {
                     currentNode.left = node;
                     break;
                 } else {
                     currentNode = currentNode.left;
                 }
-
             } else {
-                if (!currentNode.right) {
+
+                if (currentNode.right == null) {
                     currentNode.right = node;
                     break;
                 } else {
                     currentNode = currentNode.right;
                 }
             }
+
+        }
+
+    }
+
+    traverse(func = null, node = null) {
+        if (node === null) node = this.root;
+
+        if (node.left !== null) {
+            this.traverse(func, node.left);
+        }
+
+        func(node);
+
+        if (node.right !== null) {
+            this.traverse(func, node.right);
         }
     }
 
-    inorder(node = null, func = null) {
+    minNode(node = null) {
 
-        if (node == null) node = this.root;
+        if (node === null) node = this.root;
 
-        if (node.left)
-            this.inorder(node.left, func);
-
-        func(node.value);
-
-        if (node.right)
-            this.inorder(node.right, func);
-
-    }
-
-    minValue(node = null) {
-
-        if (node == null) node = this.root;
-
-        if (node.left) {
-            return this.minValue(node.left);
+        if (node.left === null) {
+            return node;
         }
 
-        return node.value;
+        return this.minNode(node.left);
     }
 
-    maxValue(node = null) {
-        if (node == null) node = this.root;
+    maxNode(node = null) {
 
-        if (node.right) {
-            return this.maxValue(node.right);
+        if (node === null) node = this.root;
+
+        if (node.right === null) {
+            return node;
         }
 
-        return node.value;
+        return this.maxNode(node.right);
     }
 
-    height(node = null) {
+    height(func, node = null) {
 
-        if (node == null) node = this.root;
+        if (node === null) node = this.root;
 
         let leftHeight = 0;
         let rightHeight = 0;
 
-        if (node.left) {
-            leftHeight = this.height(node.left);
+        if (node.left !== null) {
+            leftHeight = this.height(func, node.left)
         }
 
-        if (node.right) {
-            rightHeight = this.height(node.right);
+        if (node.right !== null) {
+            rightHeight = this.height(func, node.right)
         }
 
         return Math.max(leftHeight, rightHeight) + 1;
     }
+
+    delete(value, node = null, parent = null, side = null) {
+
+        if (node === null) node = this.root;
+
+        if (value > node.value) {
+            this.delete(value, node.right, node, 'right');
+        }
+
+        if (value < node.value) {
+            this.delete(value, node.left, node, 'left');
+        }
+
+        if (node.value == value) {
+            if (node.left === null && node.right === null) {
+                if (side == 'left') {
+                    parent.left = null;
+                } else {
+                    parent.right = null;
+                }
+            } else {
+                let temp = node.value;
+                let deepestRightNode = this.deepestRightNode(node);
+                node.value = deepestRightNode.value;
+
+                if (deepestRightNode.value < temp) {
+                    this.delete(deepestRightNode.value, node.left, node, 'left');
+                } else {
+                    this.delete(deepestRightNode.value, node.right, node, 'right');
+                }
+            }
+        }
+    }
+
+
+    deepestRightNode(node = null) {
+        if (node.left === null && node.right === null) {
+            return node;
+        }
+
+        if (node.left !== null) {
+            return this.deepestRightNode(node.left);
+        } else {
+            return this.deepestRightNode(node.right);
+        }
+    }
 }
 
-let bst = new Bst(5);
+const bst = new Bst(5);
 
-bst.push(6);
 bst.push(7);
-bst.push(2);
-bst.push(3);
+bst.push(6);
+bst.push(10);
 
+bst.delete(7);
 
-bst.inorder(null, (value) => {
-    console.log(value)
-});
+bst.traverse(node => {
+    console.log(node.value);
+})
 
-console.log(bst.minValue());
-console.log(bst.maxValue());
-console.log(bst.height());
+console.log(bst)

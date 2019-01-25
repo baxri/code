@@ -40,5 +40,4 @@ function mathPlus(num1, num2) {
 }
 
 
-
 console.log(mathPlus(399, 29));

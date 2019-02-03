@@ -11,7 +11,6 @@ function separateNumbers(s) {
 
         fine = 'YES';
         smalest = null;
-
         let currentLength = length;
         for (let i = 0; i < s.length;) {
 

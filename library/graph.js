@@ -14,6 +14,8 @@ export class Graph {
         this.nodes = []
     }
 
+
+    
     fill(nodes) {
         nodes.map(node => this.nodes.push(node));
     }

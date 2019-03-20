@@ -1,7 +1,6 @@
 // Solution Address
 // https://app.codility.com/demo/results/trainingWNMCC4-AEQ/
 
-
 const A = [3, 8, 9, 7, 6];
 const K = 1;
 

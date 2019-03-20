@@ -8,6 +8,7 @@ const K = 1;
 
 
 
+
 function solution(A, K) {
 
     // If array length less then 2 elements return same array

@@ -11,6 +11,7 @@ function solution(A, K) {
         return A;
     }
     
+    
     // Allocate new array from old elements
     let newArray = new Array(...A);
 

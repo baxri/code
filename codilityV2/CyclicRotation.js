@@ -12,6 +12,7 @@ function solution(A, K) {
     }
 
     
+
     
     // Allocate new array from old elements
     let newArray = new Array(...A);

@@ -10,6 +10,7 @@ function solution(A, K) {
     if (A.length < 2) {
         return A;
     }
+
     
     
     // Allocate new array from old elements

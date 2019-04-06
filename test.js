@@ -5,7 +5,6 @@ function nextChar(c) {
 
 function increment(string) {
     console.log( string.charCodeAt(1) );
-    
 }
 
 

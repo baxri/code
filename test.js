@@ -11,6 +11,4 @@ function increment(string) {
 }
 
 
-
-
 console.log(increment("ab"));

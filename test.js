@@ -7,7 +7,7 @@ function increment(string) {
 
     console.log( string.charCodeAt(1) );
 
-
+    
 }
 
 

@@ -28,6 +28,7 @@ function solution(A, K) {
         newArray[newIndex] = A[i];
     }
 
+
     return newArray;
 }
 

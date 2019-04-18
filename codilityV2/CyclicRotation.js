@@ -31,5 +31,4 @@ function solution(A, K) {
     return newArray;
 }
 
-
 console.log(solution(A, K));

@@ -2,25 +2,26 @@ function freqQuery(queries) {
   let arr = [];
   let hash = {};
   let result = [];
+  let freq = {};
 
   for (let i = 0; i < queries.length; i++) {
     if (queries[i][0] === 1) {
-      insert(arr, hash, queries[i][1]);
+      insert(arr, hash, freq, queries[i][1]);
     }
 
     if (queries[i][0] === 2) {
-      remove(arr, hash, queries[i][1]);
+      remove(arr, hash, freq, queries[i][1]);
     }
 
     if (queries[i][0] === 3) {
-      result.push(check(hash, queries[i][1]));
+      result.push(freq[queries[i][1]] > 0 ? 1 : 0);
     }
   }
 
   return result;
 }
 
-function insert(arr, hash, x) {
+function insert(arr, hash, freq, x) {
   arr.push(x);
 
   if (typeof hash[x] === "undefined") {
@@ -28,28 +29,21 @@ function insert(arr, hash, x) {
   } else {
     hash[x] = hash[x] + 1;
   }
+
+  freq[hash[x] - 1] = (freq[hash[x] - 1] || 0) - 1;
+  freq[hash[x]] = (freq[hash[x]] || 0) + 1;
 }
 
-function remove(arr, hash, y) {
+function remove(arr, hash, freq, y) {
   if (arr.indexOf(y) > -1) {
     arr.splice(arr.indexOf(y), 1);
+    freq[hash[y] - 1] = freq[hash[y] - 1] + 1;
+    freq[hash[y]] = freq[hash[y]] - 1;
 
     if (typeof hash[y] != "undefined") {
       hash[y] = hash[y] - 1;
     }
   }
-}
-
-function check(hash, y) {
-  let result = 0;
-
-  Object.keys(hash).map(key => {
-    if (hash[key] === y) {
-      result = 1;
-    }
-  });
-
-  return result;
 }
 
 console.log(

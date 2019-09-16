@@ -7,3 +7,4 @@ console.log('a', a)
 function countTriplets(arr, r) {
 
 }
+

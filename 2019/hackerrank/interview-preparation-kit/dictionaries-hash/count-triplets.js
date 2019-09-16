@@ -1,9 +1,9 @@
 
 
 
-let a = 1;
+let a = 3;
 
-console.log('b', a)
+console.log('a', a)
 
 function countTriplets(arr, r) {
 

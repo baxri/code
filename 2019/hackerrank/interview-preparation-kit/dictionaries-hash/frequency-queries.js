@@ -1,49 +1,35 @@
 function freqQuery(queries) {
-  let arr = [];
-  let hash = {};
+  let numbers = {};
   let result = [];
   let freq = {};
 
-  for (let i = 0; i < queries.length; i++) {
-    if (queries[i][0] === 1) {
-      insert(arr, hash, freq, queries[i][1]);
-    }
+  queries.forEach(([action, number]) => {
+    switch (action) {
+      case 1:
+        numbers[number] = numbers[number] || 0;
 
-    if (queries[i][0] === 2) {
-      remove(arr, hash, freq, queries[i][1]);
-    }
+        if (numbers[number] > 0) {
+          freq[numbers[number]] = freq[numbers[number]] - 1;
+        }
 
-    if (queries[i][0] === 3) {
-      result.push(freq[queries[i][1]] > 0 ? 1 : 0);
+        numbers[number] += 1;
+        freq[numbers[number]] = (freq[numbers[number]] || 1) + 1;
+
+        break;
+      case 2:
+        if (numbers[number] > 0) {
+          freq[numbers[number]] -= 1;
+          numbers[number] -= 1;
+          freq[numbers[number]] = (freq[numbers[number]] || 0) + 1;
+        }
+        break;
+      case 3:
+        result.push(freq[number] > 0 ? 1 : 0);
+        break;
     }
-  }
+  });
 
   return result;
-}
-
-function insert(arr, hash, freq, x) {
-  arr.push(x);
-
-  if (typeof hash[x] === "undefined") {
-    hash[x] = 1;
-  } else {
-    hash[x] = hash[x] + 1;
-  }
-
-  freq[hash[x] - 1] = (freq[hash[x] - 1] || 0) - 1;
-  freq[hash[x]] = (freq[hash[x]] || 0) + 1;
-}
-
-function remove(arr, hash, freq, y) {
-  if (arr.indexOf(y) > -1) {
-    arr.splice(arr.indexOf(y), 1);
-    freq[hash[y] - 1] = freq[hash[y] - 1] + 1;
-    freq[hash[y]] = freq[hash[y]] - 1;
-
-    if (typeof hash[y] != "undefined") {
-      hash[y] = hash[y] - 1;
-    }
-  }
 }
 
 console.log(

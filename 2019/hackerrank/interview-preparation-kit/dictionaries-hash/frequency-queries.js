@@ -3,7 +3,7 @@ function freqQuery(queries) {
   let result = [];
   let freq = {};
 
-  
+
   queries.forEach(([action, number]) => {
     switch (action) {
       case 1:
@@ -29,7 +29,6 @@ function freqQuery(queries) {
         break;
     }
   });
-
   return result;
 }
 

@@ -15,7 +15,6 @@
 //   } else if (second.length == 1) {
 //     second = second + "0";
 //   }
-
 //   return first + "." + second;
 // }
 

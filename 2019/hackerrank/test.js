@@ -17,5 +17,4 @@
 //   }
 //   return first + "." + second;
 // }
-
 // console.log(formatNumber(0));

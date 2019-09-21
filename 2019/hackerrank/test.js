@@ -5,7 +5,6 @@
 //   }
 //   number = parseInt(number * 100) / 100 + "";
 //   number = number.split(".");
-
 //   const first = number[0];
 //   let second = number[1] || [];
 

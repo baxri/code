@@ -4,7 +4,6 @@
 //     return "0.00";
 //   }
 //   number = parseInt(number * 100) / 100 + "";
-
 //   number = number.split(".");
 
 //   const first = number[0];

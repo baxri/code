@@ -7,7 +7,6 @@
 //   number = number.split(".");
 //   const first = number[0];
 //   let second = number[1] || [];
-
 //   if ((second.length = 0)) {
 //     second = "00";
 //   } else if (second.length == 1) {

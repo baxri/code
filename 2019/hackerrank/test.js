@@ -3,7 +3,6 @@
 //   if (number == 0) {
 //     return "0.00";
 //   }
-
 //   number = parseInt(number * 100) / 100 + "";
 
 //   number = number.split(".");

@@ -1,23 +1,16 @@
 function alternatingCharacters(s) {
-  let newArray = [];
-
+  let lastElement = null;
   let deleteCount = 0;
 
-
   s.split("").forEach((char, key) => {
-
-    if(newArray[newArray.length-1] == char){
-        deleteCount++
-    }else{
-        newArray.push(char)
+    if (lastElement == char) {
+      deleteCount++;
+    } else {
+      lastElement = char;
     }
-
   });
 
-  console.log(newArray)
-  console.log(deleteCount)
-
-  return deleteCount
+  return deleteCount;
 }
 
 console.log(alternatingCharacters("AABAAB"));

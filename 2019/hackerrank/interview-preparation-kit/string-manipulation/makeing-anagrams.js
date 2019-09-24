@@ -22,10 +22,6 @@ function makeAnagram(a, b) {
     removeCount += bHash[key];
   });
 
-  console.log(removeCount);
-  console.log(aHash);
-  console.log(bHash);
-
   return removeCount;
 }
 

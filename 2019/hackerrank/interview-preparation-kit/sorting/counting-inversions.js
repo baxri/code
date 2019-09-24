@@ -14,7 +14,7 @@ function mergeSort(array, half = array.length / 2, inversions) {
   return merger(mergeSort(left), mergeSort(array), inversions);
 }
 
-function merger(left, right) {
+function merger(left, right, inversions) {
   const arr = [];
 
   while (left.length && right.length) {
@@ -31,4 +31,3 @@ function merger(left, right) {
 
 // console.log(countInversions([2,1,3,1,2]));
 console.log(countInversions([2, 1, 3, 1, 2]));
-console.log(inversions);

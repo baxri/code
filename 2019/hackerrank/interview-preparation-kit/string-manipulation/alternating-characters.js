@@ -9,7 +9,6 @@ function alternatingCharacters(s) {
       lastElement = char;
     }
   });
-
   return deleteCount;
 }
 

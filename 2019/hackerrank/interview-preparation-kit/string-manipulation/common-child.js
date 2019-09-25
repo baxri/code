@@ -1,7 +1,7 @@
 function commonChild(s1, s2) {
   const matrix = buildMatrix(s1, s2);
 
-    
+  // trace function to get the string
 
   return matrix[s2.length][s1.length];
 }

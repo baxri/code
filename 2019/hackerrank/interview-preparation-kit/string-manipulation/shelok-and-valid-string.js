@@ -15,11 +15,13 @@ function isValid(s) {
     return "YES";
   }
 
-  console.log("ocurencies", ocurencies);
-
   for (let i = 0; i < ocurencies.length; i++) {
     let arr = [...ocurencies];
     arr[i]--;
+
+    if (arr[i] == 0) {
+      arr.splice(i, 1);
+    }
 
     if (is_all_element_are_same(arr)) {
       return "YES";
@@ -40,4 +42,4 @@ function is_all_element_are_same(arr) {
   return true;
 }
 
-console.log(isValid("aabbcd"));
+console.log(isValid("aabbc"));

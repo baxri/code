@@ -5,40 +5,39 @@ function isValid(s) {
     hash[s[i]] = hash[s[i]] + 1 || 1;
   }
 
-  let lastCheckedElement = null;
-  let isValid = true;
-  let canRemove = true;
-
   let ocurencies = [];
 
   Object.keys(hash).map(key => {
     ocurencies.push(hash[key]);
   });
 
-  ocurencies.sort();
+  if (is_all_element_are_same(ocurencies)) {
+    return "YES";
+  }
 
-  ocurencies.forEach(number => {
-    if (lastCheckedElement !== null) {
-      if (lastCheckedElement !== number) {
-        if (!canRemove) {
-          isValid = false;
-        } else {
-          if (Math.abs(lastCheckedElement - number) === 1) {
-            canRemove = false;
-            number--;
-          } else {
-            isValid = false;
-          }
-        }
-      }
+  console.log("ocurencies", ocurencies);
+
+  for (let i = 0; i < ocurencies.length; i++) {
+    let arr = [...ocurencies];
+    arr[i]--;
+
+    if (is_all_element_are_same(arr)) {
+      return "YES";
     }
+  }
 
-    lastCheckedElement = number;
-  });
-
-  console.log('hash', hash)
-
-  return isValid ? "YES" : "NO";
+  return "NO";
 }
 
-console.log(isValid("abcdefghhgfedecba"));
+function is_all_element_are_same(arr) {
+  const first = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (first !== arr[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(isValid("aabbcd"));

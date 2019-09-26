@@ -1,11 +1,14 @@
 function minimumBribes(q) {
   let swapCount = 0;
-
+  let sorted = false;
   let swipes = {};
 
   for (let i = 0; i < q.length; i++) {
+    let sortedElements = 0;
+
     for (let j = 0; j < q.length; j++) {
       if (q[j] < q[j + 1]) {
+        sortedElements++;
         continue;
       }
 
@@ -19,13 +22,19 @@ function minimumBribes(q) {
         swap(q, j, j + 1);
       }
     }
+
+    if (sortedElements == q.length) {
+      sorted = true;
+    }
   }
 
-  let sorted = true;
+  if (sorted === false) {
+    sorted = true;
 
-  for (let i = 0; i < q.length; i++) {
-    if (q[i] > q[i + 1]) {
-      sorted = false;
+    for (let i = 0; i < q.length; i++) {
+      if (q[i] > q[i + 1]) {
+        sorted = false;
+      }
     }
   }
 

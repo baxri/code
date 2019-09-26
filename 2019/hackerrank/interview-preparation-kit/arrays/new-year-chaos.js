@@ -25,6 +25,7 @@ function minimumBribes(q) {
 
     if (sortedElements == q.length) {
       sorted = true;
+      break;
     }
   }
 

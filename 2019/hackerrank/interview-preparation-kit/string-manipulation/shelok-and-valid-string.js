@@ -31,6 +31,7 @@ function isValid(s) {
   return "NO";
 }
 
+
 function is_all_element_are_same(arr) {
   const first = arr[0];
   for (let i = 0; i < arr.length; i++) {

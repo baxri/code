@@ -1,4 +1,6 @@
-function minimumBribes(q) {
+
+
+function minimumBribesBruthForce(q) {
   let swapCount = 0;
   let sorted = false;
   let swipes = {};

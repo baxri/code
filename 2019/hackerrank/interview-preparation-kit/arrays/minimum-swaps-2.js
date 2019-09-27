@@ -4,7 +4,6 @@ function minimumSwaps(arr) {
   for (let i = 0; i < arr.length; i++) {
     swapCount += swapChain(arr, i);
   }
-
   return swapCount;
 }
 

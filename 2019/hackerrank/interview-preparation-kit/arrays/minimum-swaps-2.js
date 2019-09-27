@@ -11,6 +11,21 @@ function swapChain(arr, i) {
   let swapCount = 0;
 
   let current = arr[i];
+
+  while (current != i + 1) {
+    arr[i] = arr[current - 1];
+    arr[current - 1] = current;
+    swapCount++;
+    current = arr[i];
+  }
+
+  return swapCount;
+}
+
+function swapChainOld(arr, i) {
+  let swapCount = 0;
+
+  let current = arr[i];
   let target = arr[current - 1];
 
   while (current != target) {

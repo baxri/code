@@ -4,10 +4,8 @@ function maxMin(k, arr) {
   let minValue = null;
 
   for (let i = 0; i <= arr.length - k; i++) {
-    let subarr = arr.slice(i, i + k);
-
-    let min = subarr[0];
-    let max = subarr[subarr.length - 1];
+    let min = arr[i];
+    let max = arr[i + k - 1];
 
     let diference = Math.abs(max - min);
 

@@ -20,5 +20,5 @@ function reverseShuffleMerge(s) {
   return s.join("");
 }
 
-console.log(reverseShuffleMerge("eggegg"));
+console.log(reverseShuffleMerge("aeiouuoiea"));
 // console.log(reverseShuffleMerge("abcdefgabcdefg"));

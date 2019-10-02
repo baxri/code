@@ -3,30 +3,27 @@
 function whatFlavors(cost, money) {
   let hash = {};
 
+  let sortedMenu = [...cost].sort((a, b) => a - b);
+
   for (let i = 0; i < cost.length; i++) {
     if (typeof hash[cost[i]] === "undefined") {
       hash[cost[i]] = i + 1;
     }
   }
 
-  cost.sort((a, b) => a - b);
-
-  for (let i = 0; i < cost.length; i++) {
+  for (let i = 0; i < sortedMenu.length; i++) {
     let search = money - cost[i];
 
-    let comp = binarySearch(cost, search, i + 1)
+    let comp = binarySearch(sortedMenu, search, i + 1);
 
-    if(comp !== null){
-      console.log(i + 1, hash[comp])
+    if (comp !== null) {
+      console.log(i + 1, hash[comp]);
       break;
     }
-
   }
 }
 
-
 function binarySearch(arr, search, left = 0, right = arr.length - 1) {
-
   if (left > right) {
     return null;
   }
@@ -43,4 +40,4 @@ function binarySearch(arr, search, left = 0, right = arr.length - 1) {
 }
 
 // console.log(whatFlavors([1, 4, 5, 3, 2], 4));
-console.log(whatFlavors([2,  2, 4, 3], 4));
+console.log(whatFlavors([2, 2, 4, 3], 4));

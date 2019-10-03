@@ -17,6 +17,7 @@ function whatFlavors(cost, money) {
   }
 }
 
+
 function getIndexes(menu, value1, value2){
   let index1 = indexOf(menu, value1, -1)
   let index2 = indexOf(menu, value2, index1)

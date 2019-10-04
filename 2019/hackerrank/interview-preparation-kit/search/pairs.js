@@ -13,6 +13,7 @@ function pairs(k, arr) {
       numberOfPairs++;
     }
   }
+  
   return numberOfPairs;
 }
 

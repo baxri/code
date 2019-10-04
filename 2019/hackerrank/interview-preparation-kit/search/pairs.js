@@ -10,13 +10,14 @@ function pairs(k, arr) {
     let founded = binarySearch(arr, search, i + 1);
 
     if (founded !== null) {
-        numberOfPairs++
+      numberOfPairs++;
     }
   }
-  return numberOfPairs
+  return numberOfPairs;
 }
 
 console.log(pairs(2, [1, 5, 3, 4, 2]));
+
 
 function binarySearch(arr, search, left = 0, right = arr.length - 1) {
   if (left > right) {

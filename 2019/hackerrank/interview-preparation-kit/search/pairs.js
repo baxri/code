@@ -2,7 +2,6 @@ function pairs(k, arr) {
   arr.sort((a, b) => a - b);
 
   let numberOfPairs = 0;
-
   for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
     let search = current + k;
@@ -17,6 +16,7 @@ function pairs(k, arr) {
 }
 
 console.log(pairs(2, [1, 5, 3, 4, 2]));
+
 
 function binarySearch(arr, search, left = 0, right = arr.length - 1) {
   if (left > right) {

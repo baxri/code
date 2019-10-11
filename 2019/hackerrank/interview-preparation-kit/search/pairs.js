@@ -21,7 +21,6 @@ function binarySearch(arr, search, left = 0, right = arr.length - 1) {
   if (left > right) {
     return null;
   }
-
   let mid = Math.floor((left + right) / 2);
   if (arr[mid] === search) {
     return arr[mid];

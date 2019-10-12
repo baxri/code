@@ -3,7 +3,6 @@ function minTime(machines, goal) {
 
   let producedItems = 0;
   let spentDays = 0;
-
   let workingMachies = {};
 
   while (true) {
@@ -12,22 +11,18 @@ function minTime(machines, goal) {
     for (let i = 0; i < machines.length; i++) {
       let key = `key_${i}${machines[i]}`;
 
-        console.log('key', key)
-
       workingMachies[key] = workingMachies[key] + 1 || 1;
 
       if (workingMachies[key] === machines[i]) {
         producedItems++;
 
-        workingMachies[key] == 0;
+        workingMachies[key] = 0;
 
         if (producedItems >= goal) {
           return spentDays;
         }
       }
     }
-
-    break;
   }
 }
 

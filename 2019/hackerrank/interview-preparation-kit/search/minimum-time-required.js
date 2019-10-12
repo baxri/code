@@ -4,19 +4,31 @@ function minTime(machines, goal) {
   let producedItems = 0;
   let spentDays = 0;
 
-  while (producedItems < goal) {
-    for (let i = 0; i < machines.length; i++) {
-      spentDays += machines[i];
-      producedItems++  
-      
+  let workingMachies = {};
 
-      if(producedItems >= 10){
+  while (true) {
+    spentDays++;
+
+    for (let i = 0; i < machines.length; i++) {
+      let key = `key_${i}${machines[i]}`;
+
+        console.log('key', key)
+
+      workingMachies[key] = workingMachies[key] + 1 || 1;
+
+      if (workingMachies[key] === machines[i]) {
+        producedItems++;
+
+        workingMachies[key] == 0;
+
+        if (producedItems >= goal) {
           return spentDays;
+        }
       }
     }
-  }
 
-  console.log(machines);
+    break;
+  }
 }
 
 console.log(minTime([2, 3, 2], 10));

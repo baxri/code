@@ -22,6 +22,7 @@ function triplets(a, b, c) {
         total += ai * ci;
         bi++
     }
+    
     return total
 }
 

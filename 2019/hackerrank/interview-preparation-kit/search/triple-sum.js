@@ -25,6 +25,7 @@ function triplets(a, b, c) {
     return total
 }
 
+
 function tripletsV1(a, b, c) {
   a.sort((a, b) => a - b);
   b.sort((a, b) => a - b);

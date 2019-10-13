@@ -15,7 +15,6 @@ function minTime(machines, goal) {
         break;
       }
     }
-
     if (done >= goal) {
       high = mid - 1;
       ans = mid;

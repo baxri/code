@@ -13,7 +13,6 @@ TO handle how many seconds app is in background may be this is a good library an
 
 https://www.npmjs.com/package/react-native-background-timer
 
-
 ## Network requests, including backend API calls
 
 For this task I think to is best way to log this data at one place where we send http requests and get response. But in the application there are many places where we are using just axios.post and axios.get without any wrapper function. what is the best way may be it is better at first to wrap all request in one wraper

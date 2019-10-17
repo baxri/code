@@ -17,6 +17,7 @@ https://www.npmjs.com/package/react-native-background-timer
 
 For this task I think to is best way to log this data at one place where we send http requests and get response. But in the application there are many places where we are using just axios.post and axios.get without any wrapper function. what is the best way may be it is better at first to wrap all request in one wraper
 
+
 ## async storage access times (i.e. get and set item)
 This is simple I think to start and finish trace before and after asyn function to get storage access time.
 

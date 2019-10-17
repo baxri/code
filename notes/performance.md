@@ -20,5 +20,4 @@ For this task I think to is best way to log this data at one place where we send
 ## async storage access times (i.e. get and set item)
 This is simple I think to start and finish trace before and after asyn function to get storage access time.
 
-
 and also Do I have access on firebase console?

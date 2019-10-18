@@ -12,7 +12,6 @@ function hourglassSum(arr) {
   }
 
   hourGlasses.sort((a, b) => b - a);
-
   return hourGlasses[0];
 }
 

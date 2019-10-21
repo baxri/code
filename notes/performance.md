@@ -11,7 +11,6 @@ If there is a better solution to handle boot time lmk.
 ## Time in foreground/background
 TO handle how many seconds app is in background may be this is a good library and make a little timer that starts when app goes to background and stops when app goes to foreground.
 
-https://www.npmjs.com/package/react-native-background-timer
 
 ## Network requests, including backend API calls
 

@@ -12,6 +12,7 @@ function rotLeft(a, d) {
       newIndex = a.length + newIndex;
     }
 
+    
     rotatedArray[newIndex] = element;
   });
 

@@ -12,11 +12,12 @@ function rotLeft(a, d) {
       newIndex = a.length + newIndex;
     }
 
-    
+
     rotatedArray[newIndex] = element;
   });
 
   return rotatedArray;
 }
+
 
 console.log(rotLeft([1, 2, 3, 4, 5], 6));

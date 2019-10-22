@@ -3,7 +3,6 @@ This is what I found
 ## Boot time
 
 To handle Boot time may be we can use this lib?
-
 https://github.com/doomsower/react-native-startup-time
 
 If there is a better solution to handle boot time lmk.

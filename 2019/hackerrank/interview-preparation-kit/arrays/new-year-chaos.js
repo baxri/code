@@ -7,7 +7,6 @@ function minimumBribesBruthForce(q) {
 
   for (let i = 0; i < q.length; i++) {
     let sortedElements = 0;
-
     for (let j = 0; j < q.length; j++) {
       if (q[j] < q[j + 1]) {
         sortedElements++;

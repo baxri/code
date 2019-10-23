@@ -12,11 +12,9 @@ function minimumBribesBruthForce(q) {
         sortedElements++;
         continue;
       }
-
       if (swipes[q[j]] > 1) {
         continue;
       }
-
       if (q[j] > q[j + 1]) {
         swipes[q[j]] = swipes[q[j]] ? swipes[q[j]] + 1 : 1;
         swapCount++;

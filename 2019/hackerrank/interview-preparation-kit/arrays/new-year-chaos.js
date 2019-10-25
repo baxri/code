@@ -35,7 +35,6 @@ function minimumBribesBruthForce(q) {
       }
     }
   }
-
   return sorted ? swapCount : "Too chaotic";
 }
 function swap(arr, i, j) {

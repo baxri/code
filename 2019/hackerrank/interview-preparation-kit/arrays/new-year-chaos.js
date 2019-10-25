@@ -4,7 +4,6 @@ function minimumBribesBruthForce(q) {
   let swapCount = 0;
   let sorted = false;
   let swipes = {};
-
   for (let i = 0; i < q.length; i++) {
     let sortedElements = 0;
     for (let j = 0; j < q.length; j++) {

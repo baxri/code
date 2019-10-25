@@ -29,7 +29,6 @@ function minimumBribesBruthForce(q) {
   }
   if (sorted === false) {
     sorted = true;
-
     for (let i = 0; i < q.length; i++) {
       if (q[i] > q[i + 1]) {
         sorted = false;

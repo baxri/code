@@ -21,7 +21,6 @@ function minimumBribesBruthForce(q) {
         swap(q, j, j + 1);
       }
     }
-
     if (sortedElements == q.length) {
       sorted = true;
       break;

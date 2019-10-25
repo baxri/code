@@ -27,7 +27,6 @@ function minimumBribesBruthForce(q) {
       break;
     }
   }
-
   if (sorted === false) {
     sorted = true;
 

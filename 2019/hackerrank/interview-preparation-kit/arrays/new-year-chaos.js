@@ -38,7 +38,6 @@ function minimumBribesBruthForce(q) {
 
   return sorted ? swapCount : "Too chaotic";
 }
-
 function swap(arr, i, j) {
   let temp = arr[i];
   arr[i] = arr[j];

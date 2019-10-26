@@ -5,7 +5,6 @@ function rotLeft(a, d) {
     if (d > a.length) {
       d = d % a.length;
     }
-
     let newIndex = i - d;
     if (newIndex < 0) {
       newIndex = a.length + newIndex;

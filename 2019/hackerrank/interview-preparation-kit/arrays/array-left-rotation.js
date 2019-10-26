@@ -7,11 +7,9 @@ function rotLeft(a, d) {
     }
 
     let newIndex = i - d;
-
     if (newIndex < 0) {
       newIndex = a.length + newIndex;
     }
-
 
     rotatedArray[newIndex] = element;
   });

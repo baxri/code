@@ -1,6 +1,5 @@
 function rotLeft(a, d) {
   let rotatedArray = new Array(a.length);
-
   a.forEach((element, i) => {
     if (d > a.length) {
       d = d % a.length;

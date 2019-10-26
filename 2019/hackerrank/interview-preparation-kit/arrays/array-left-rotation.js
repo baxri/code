@@ -10,7 +10,6 @@ function rotLeft(a, d) {
     if (newIndex < 0) {
       newIndex = a.length + newIndex;
     }
-
     rotatedArray[newIndex] = element;
   });
   return rotatedArray;

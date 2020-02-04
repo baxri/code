@@ -51,4 +51,3 @@ function arrayManipulationV1(n, queries) {
 console.log(arrayManipulation(10, [[1, 5, 3], [4, 8, 7], [6, 9, 1]]));
 
 // 0 0 0 0 0 0 0 0 0 0 
-   3         -3

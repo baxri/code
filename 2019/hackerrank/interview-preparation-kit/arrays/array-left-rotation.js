@@ -12,4 +12,5 @@ function rotLeft(a, d) {
   });
   return rotatedArray;
 }
+
 console.log(rotLeft([1, 2, 3, 4, 5], 6));

@@ -5,7 +5,6 @@ let rawData = [
     { name : 'Cake', id : 7},
   ]
   
-  
   let data = rawData.reduce((r, e) => {
     // get first letter of name of current element
     let group = e.name[0];

@@ -10,6 +10,8 @@ function frequencyCounter(a, b) {
     if (index === -1) {
       return false;
     }
+
+    b.splice(index, 1);
   }
 
   return true;

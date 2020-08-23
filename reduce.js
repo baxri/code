@@ -17,7 +17,6 @@ let rawData = [
   }, {})
   
   // since data at this point is an object, to get array of values
-  // we use Object.values method
   let result = Object.values(data)
   
   console.log(result)

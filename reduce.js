@@ -16,7 +16,7 @@ let rawData = [
     return r;
   }, {})
   
-  // since data at this point is an object, to get array of values
+  // since data at this point is an object,  to get array of values
   let result = Object.values(data)
   
   console.log(result)

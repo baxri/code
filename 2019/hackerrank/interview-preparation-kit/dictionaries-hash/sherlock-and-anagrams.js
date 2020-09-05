@@ -18,6 +18,8 @@ function sherlockAndAnagrams(s) {
     }
   }
 
+  console.log(substrings)
+
   Object.keys(substrings).map(key => {
     for (let i = 0; i < substrings[key].length; i++) {
       for (let j = i + 1; j < substrings[key].length; j++) {
@@ -29,8 +31,8 @@ function sherlockAndAnagrams(s) {
   return anagrams;
 }
 
-console.log(sherlockAndAnagrams("kkkk"));
-console.log(sherlockAndAnagrams("mom"));
-console.log(sherlockAndAnagrams("ifailuhkqq"));
+// console.log(sherlockAndAnagrams("kkkk"));
+// console.log(sherlockAndAnagrams("mom"));
+// console.log(sherlockAndAnagrams("ifailuhkqq"));
 console.log(sherlockAndAnagrams("abba"));
-console.log(sherlockAndAnagrams("abcd"));
+// console.log(sherlockAndAnagrams("abcd"));

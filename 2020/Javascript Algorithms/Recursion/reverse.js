@@ -7,3 +7,4 @@ function reverse(str) {
 }
 
 console.log(reverse("awesome"));
+console.log(reverse("rithmschool"));

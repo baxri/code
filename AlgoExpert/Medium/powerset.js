@@ -13,6 +13,4 @@ function powerset(array) {
   return subsets;
 }
 
-// [], [1], [2], [1, 2]
-
 console.log(powerset([1, 2]));

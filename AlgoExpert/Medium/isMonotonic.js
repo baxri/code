@@ -1,16 +1,32 @@
+// function isMonotonic(array) {
+//   let direction = -1;
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (direction === null && array[i] !== array[i + 1]) {
+//       direction = array[i] > array[i + 1] ? "DECREASING" : "INCREASING";
+//     }
+
+//     if (direction === "INCREASING" && array[i] > array[i + 1]) {
+//       return false;
+//     }
+
+//     if (direction === "DECREASING" && array[i] < array[i + 1]) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
 function isMonotonic(array) {
   let direction = null;
 
   for (let i = 0; i < array.length; i++) {
     if (direction === null && array[i] !== array[i + 1]) {
-      direction = array[i] > array[i + 1] ? "DECREASING" : "INCREASING";
+      direction = array[i] > array[i + 1] ? -1 : 1;
     }
 
-    if (direction === "INCREASING" && array[i] > array[i + 1]) {
-      return false;
-    }
-
-    if (direction === "DECREASING" && array[i] < array[i + 1]) {
+    if (direction !== null && (array[i + 1] - array[i]) * direction <= 0) {
       return false;
     }
   }

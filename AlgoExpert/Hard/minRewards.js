@@ -16,14 +16,17 @@ function minRewards(scores) {
       result[i] = 1;
 
       if (result[i - 1] === 1) {
-        // for (let j = i - 1; j <= 0; j--) {
-        //     result[j] = result[j] + 1;
-        // }
+        for (let j = i - 1; j >= 0; j--) {
+          result[j] = result[j] + 1;
+        }
       }
     }
   }
 
-  console.log(result);
+
+
+  return result;
 }
 
-console.log(minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5]));
+console.log(minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5, 4]));
+

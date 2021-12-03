@@ -23,14 +23,8 @@ function sherlockAndAnagrams(s) {
 
   let counter = 0;
 
-  console.log(substrings);
-
   for (let val in substrings) {
-    const arr = substrings[val];
-
-    if (arr.length > 1) {
-      counter++;
-    }
+    counter += possibleCombinations(substrings[val].length);
   }
 
   return counter;
@@ -38,6 +32,13 @@ function sherlockAndAnagrams(s) {
 
 function signature(str) {
   return str.split("").sort().join("");
+}
+
+function possibleCombinations(n) {
+  if (n < 2) {
+    return 0;
+  }
+  return (n * (n - 1)) / 2;
 }
 
 // console.log(sherlockAndAnagrams("abba"));
@@ -48,5 +49,3 @@ console.log(sherlockAndAnagrams("cdcd"));
 // c d c d   2
 // cd dc cd 3
 // cdc dcd
-
-
